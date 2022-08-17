@@ -1,13 +1,12 @@
-import Home from 'pages/Home';
+
 import './assets/styles/custom.scss';
 import './App.css';
+import Rotas from 'Routes';
 
-const App = () => {
+function App() {
   return (
-    <>
-      <Home />
-    </>
-  );
-};
+       <Rotas/>
+      );
+}
 
 export default App;
