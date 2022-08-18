@@ -1,6 +1,7 @@
 import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
 import ButtonIcon from 'components/ButtonIcon';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -15,7 +16,11 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <ButtonIcon></ButtonIcon>
+            <div>
+              <Link to="/products">
+                <ButtonIcon />
+              </Link>
+            </div>
           </div>
         </div>
         <div className="home-image-container">
