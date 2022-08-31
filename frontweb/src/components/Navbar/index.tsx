@@ -35,7 +35,7 @@ const Navbar = () => {
             <li>
             <NavLink className={(navData) => navData.isActive ? "active" : "" } to="/admin">  ADMIN</NavLink>
             </li>
-          </ul>
+          </ul>yarn 
         </div>
       </div>
     </nav>
