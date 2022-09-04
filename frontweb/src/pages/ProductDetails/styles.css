@@ -5,12 +5,10 @@
 }
 
 .product-details-card{
-  border: 1px solid red;
   padding: 10px;
 }
 
 .goback-container{
-  border: 1px solid red;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -39,8 +37,7 @@ width: 80%;
 }
 
 .name-price-container{
-  border: 1px solid red;
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .name-price-container h1{
 font-size: 1.1em;
