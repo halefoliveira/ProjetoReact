@@ -23,6 +23,7 @@ const Catalog = () => {
       params: {
         page: 0,
         size: 12,
+        
       },
     };
 
