@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
-import { User } from 'types/User';
+import { User } from 'types/user';
 import { SpringPage } from 'types/vendor/spring';
 import { requestBackend } from 'util/requests';
  
@@ -32,4 +32,3 @@ const Users = () => {
 };
  
 export default Users;
-

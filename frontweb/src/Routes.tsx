@@ -1,24 +1,35 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import Home from 'pages/Home';
 import Navbar from 'components/Navbar';
 import Catalog from 'pages/Catalog';
 import Admin from 'pages/Admin';
 import ProductDetails from 'pages/ProductDetails';
 import Auth from 'pages/Admin/Auth';
+import history from 'util/history';
 
-const Rotas = () => (
-  <BrowserRouter>
+const Routes = () => (
+  <Router history={history}>
     <Navbar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/products" element={<Catalog />} />
-      <Route path="/products/:productId" element={<ProductDetails />} />
-      <Route path="/Admin/auth" element={<Navigate to="/admin/auth/login" replace />} />
-      <Route path="/Admin/auth/*" element={<Auth/>} />
-      <Route path="/Admin" element={<Navigate to="products" replace />} />
-      <Route path="/Admin/*" element={<Admin />} />
-    </Routes>
-  </BrowserRouter>
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/products" exact>
+        <Catalog />
+      </Route>
+      <Route path="/products/:productId">
+        <ProductDetails />
+      </Route>
+      <Redirect from="/admin/auth" to="/admin/auth/login" exact />
+      <Route path="/admin/auth" >
+        <Auth />
+      </Route>
+      <Redirect from="/admin" to="/admin/products" exact />
+      <Route path="/admin">
+        <Admin />
+      </Route>
+    </Switch>
+  </Router>
 );
 
-export default Rotas;
+export default Routes;
